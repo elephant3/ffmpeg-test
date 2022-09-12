@@ -4,6 +4,7 @@ const ffprobePath = require('@ffprobe-installer/ffprobe').path
 import { Request, Response } from 'express'
 
 export default async (req: Request, res: Response) => {
+  console.log('Starting ffprobe-installer test...')
   const child = exec([ffprobePath, '-version'].join(' '))
   child.stdout.on('data', function (data) {
     console.log('stdout: ' + data)
