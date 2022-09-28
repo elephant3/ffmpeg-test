@@ -1,10 +1,10 @@
 import { exec } from 'child_process'
-const ffprobePath = require('ffprobe-static').path
 
 import { Request, Response } from 'express'
 
 export default async (req: Request, res: Response) => {
   console.log('Starting ffprobe-installer test...')
+  const ffprobePath = require('ffprobe-static').path
   
   const child = exec([ffprobePath, '-version'].join(' '))
   child.stdout.on('data', function (data) {

@@ -1,10 +1,10 @@
 import { exec } from 'child_process'
-const audiowaveform = require('audiowaveform-installer').path
 
 import { Request, Response } from 'express'
 
 export default async (req: Request, res: Response) => {
   console.log('Starting ffprobe-installer test...')
+  const audiowaveform = require('audiowaveform-installer').path
   
   const child = exec([audiowaveform, '--version'].join(' '))
   child.stdout.on('data', function (data) {
