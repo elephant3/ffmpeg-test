@@ -1,12 +1,13 @@
 import { exec } from 'child_process'
 
 import { Request, Response } from 'express'
+const awf = require("@craft-cloud/audiowaveform-static-aws");
 
 export default async (req: Request, res: Response) => {
-  console.log('Starting audiowaveform-installer-2 test...')
-  // const audiowaveform = require('@audiowaveform-installer/audiowaveform').path
+  console.log('Starting ffprobe-installer test...')
+  const audiowaveform = require('audiowaveform-installer').path
   
-  const child = exec([audiowaveform, '--version'].join(' '))
+  const child = exec([awf(), '--version'].join(' '))
   child.stdout.on('data', function (data) {
     console.log('stdout: ' + data)
   })

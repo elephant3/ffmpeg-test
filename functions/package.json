@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@audiowaveform-installer/audiowaveform": "github:spakanati/audiowaveform-installer",
+    "@craft-cloud/audiowaveform-static-aws": "^1.0.0",
     "@ffprobe-installer/ffprobe": "^1.4.1",
     "@nhost/nhost-js": "^1.4.11",
     "@types/express": "^4.17.13",
