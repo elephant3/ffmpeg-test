@@ -4,7 +4,9 @@ import { Request, Response } from 'express'
 
 export default async (req: Request, res: Response) => {
   console.log('Starting audiowaveform-static test...')
+
   const audiowaveform = require('audiowaveform-static').path
+  console.log('audiowaveform path', audiowaveform)
   
   const child = exec([audiowaveform, '--version'].join(' '))
   child.stdout.on('data', function (data) {
