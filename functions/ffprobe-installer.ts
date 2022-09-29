@@ -1,27 +1,7 @@
-import { exec } from 'child_process'
-
 import { Request, Response } from 'express'
+import { path as ffprobePath } from '@ffprobe-installer/ffprobe'
+import { runCommand } from './_command'
 
-export default async (req: Request, res: Response) => {
-  const ffprobePath = require('@ffprobe-installer/ffprobe').path
-  
-  console.log('Starting ffprobe-installer test...', ffprobePath)
-  
-  const child = exec([ffprobePath, '-version'].join(' '))
-  child.stdout.on('data', function (data) {
-    console.log('stdout: ' + data)
-  })
-  child.stderr.on('data', function (data) {
-    console.log('stderr: ' + data)
-  })
-  child.on('close', function (code) {
-    console.log('closing code: ' + code)
-    if (code === 0) {
-      res.status(200).send('Success!')
-    } else {
-      res.status(500).send('Failed!')
-    }   
-  })
-
-  
+export default async (_: Request, res: Response) => {  
+  runCommand(ffprobePath, res)
 }

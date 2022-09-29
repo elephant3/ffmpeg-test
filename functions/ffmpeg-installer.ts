@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
-import ffprobePath from 'ffprobe-static'
+import { path as ffmpegPath } from '@ffmpeg-installer/ffmpeg'
 import { runCommand } from './_command'
 
 export default async (_: Request, res: Response) => {  
-  runCommand(ffprobePath, res)
+  runCommand(ffmpegPath, res)
 }

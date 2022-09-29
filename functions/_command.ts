@@ -1,13 +1,9 @@
 import { exec } from 'child_process'
+import {  Response } from 'express'
 
-import { Request, Response } from 'express'
-const awf = require("@craft-cloud/audiowaveform-static-aws");
-
-export default async (req: Request, res: Response) => {
-  console.log('Starting ffprobe-installer test...')
-  const audiowaveform = require('audiowaveform-installer').path
-  
-  const child = exec([awf(), '--version'].join(' '))
+export const runCommand = (binaryPath: string, res: Response) => {
+  console.log('Expecting binary at path', binaryPath)
+  const child = exec([binaryPath, '-version'].join(' '))
   child.stdout.on('data', function (data) {
     console.log('stdout: ' + data)
   })
@@ -21,7 +17,5 @@ export default async (req: Request, res: Response) => {
     } else {
       res.status(500).send('Failed!')
     }   
-  })
-
-  
+  }) 
 }

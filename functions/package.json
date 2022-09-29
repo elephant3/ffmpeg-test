@@ -4,19 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@audiowaveform-installer/audiowaveform": "github:spakanati/audiowaveform-installer",
-    "@craft-cloud/audiowaveform-static-aws": "^1.0.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@ffprobe-installer/ffprobe": "^1.4.1",
     "@nhost/nhost-js": "^1.4.11",
     "@types/express": "^4.17.13",
-    "audiowaveform-installer": "^1.1.0",
-    "audiowaveform-static": "github:spakanati/audiowaveform-static",
-    "child-process-promise": "^2.2.1",
-    "chmod": "^0.2.1",
     "express": "^4.18.1",
     "ffmpeg-static": "^5.1.0",
-    "ffprobe-static": "^3.1.0",
-    "ncp": "^2.0.0"
+    "ffprobe-static": "^3.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
