@@ -1,12 +1,12 @@
 import { exec } from 'child_process'
 
 import { Request, Response } from 'express'
-const ffmpegPath  = require('ffmpeg-static').path
+const ffmpegPath  = require('ffmpeg-static')
 
 export default async (req: Request, res: Response) => {
   console.log('Starting ffmpegStatic -static test...')
   
-  console.log(`PATH: ffmpegPath`);
+  console.log(`PATH: ${ffmpegPath}`);
   const child = exec([ffmpegPath, '-version'].join(' '))
   child.stdout.on('data', function (data) {
     console.log('stdout: ' + data)
