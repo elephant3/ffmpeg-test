@@ -1,12 +1,13 @@
 import { exec } from 'child_process'
 
 import { Request, Response } from 'express'
+const ffmpegPath  = require('ffmpeg-static').path
 
 export default async (req: Request, res: Response) => {
-  console.log('Starting audiowaveform-installer-2 test...')
-  const audiowaveform = require('@audiowaveform-installer/audiowaveform').path
-  console.log('audiowaveform',audiowaveform)
-  const child = exec([audiowaveform, '--version'].join(' '))
+  console.log('Starting ffmpegStatic -static test...')
+  
+  console.log("PATH", ffmpegPath);
+  const child = exec([ffmpegPath, '--version'].join(' '))
   child.stdout.on('data', function (data) {
     console.log('stdout: ' + data)
   })
