@@ -12,9 +12,11 @@
     "audiowaveform-installer": "^1.1.0",
     "audiowaveform-static": "github:spakanati/audiowaveform-static",
     "child-process-promise": "^2.2.1",
+    "chmod": "^0.2.1",
     "express": "^4.18.1",
     "ffmpeg-static": "^5.1.0",
-    "ffprobe-static": "^3.1.0"
+    "ffprobe-static": "^3.1.0",
+    "ncp": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
